@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>GWAP SAFE Buttons Demo</title>
+  <style>
+    body{margin:0;display:grid;place-items:center;height:100vh;background:#050505;}
+    .wrap{width:min(960px,95vw);}
+    /* IMPORTANT: inline the SVG for :hover to work everywhere */
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- INLINE SVG (copy/paste from gwap-animated-buttons.svg) -->
+    <svg width="900" height="240" viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style><![CDATA[
+      .btn { cursor:pointer; }
+      .outline { fill:#000; stroke:#00ff66; stroke-width:3; }
+      .solid { fill:#00ff66; }
+      .txt-dark { fill:#000; font: 800 18px Arial; letter-spacing:0.5px; }
+      .txt-light { fill:#fff; font: 800 18px Arial; letter-spacing:0.5px; }
+
+      /* Hover glow (works when inline in HTML; some SVG viewers ignore :hover) */
+      .btn:hover .outline, .btn:hover .solid {
+        filter: drop-shadow(0 0 10px rgba(0,255,102,0.85)) drop-shadow(0 0 22px rgba(0,255,102,0.35));
+        transform: translateY(-1px);
+      }
+      .btn:active .outline, .btn:active .solid {
+        transform: translateY(1px);
+        filter: drop-shadow(0 0 6px rgba(0,255,102,0.55));
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Primary Solid -->
+  <g class="btn" transform="translate(40,60)">
+    <rect class="solid" x="0" y="0" rx="18" ry="18" width="250" height="64"/>
+    <text class="txt-dark" x="125" y="41" text-anchor="middle">REQUEST ACCESS</text>
+  </g>
+
+  <!-- Secondary Outline -->
+  <g class="btn" transform="translate(330,60)">
+    <rect class="outline" x="0" y="0" rx="18" ry="18" width="250" height="64"/>
+    <text class="txt-light" x="125" y="41" text-anchor="middle">VIEW SAFE SPEC</text>
+  </g>
+
+  <!-- Pill Toggle -->
+  <g class="btn" transform="translate(620,60)">
+    <rect class="outline" x="0" y="0" rx="32" ry="32" width="240" height="64"/>
+    <circle cx="52" cy="32" r="22" fill="#00ff66"/>
+    <text class="txt-light" x="150" y="41" text-anchor="middle">CERTIFIED</text>
+  </g>
+</svg>
+
+  </div>
+</body>
+</html>
